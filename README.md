@@ -52,7 +52,16 @@ A comprehensive platform for quizzes and contests, empowering students, parents,
    # Configure .env based on .env.example
    ```
 
-3. **Install Frontend Dependencies**
+3. **Database Configuration**
+   - Create a `.env` file in the `backend` directory.
+   - Add your MongoDB connection string:
+     ```env
+     MONGODB_URI=mongodb://localhost:27017/llm_quiz_platform
+     # Or for MongoDB Atlas:
+     # MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/llm_quiz_platform
+     ```
+
+4. **Install Frontend Dependencies**
    ```bash
    cd frontend
    npm install
