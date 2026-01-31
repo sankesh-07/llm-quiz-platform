@@ -52,14 +52,37 @@ A comprehensive platform for quizzes and contests, empowering students, parents,
    # Configure .env based on .env.example
    ```
 
-3. **Database Configuration**
-   - Create a `.env` file in the `backend` directory.
-   - Add your MongoDB connection string:
-     ```env
-     MONGODB_URI=mongodb://localhost:27017/llm_quiz_platform
-     # Or for MongoDB Atlas:
-     # MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/llm_quiz_platform
-     ```
+3. **Environment Configuration**
+
+   **Backend (`backend/.env`)**
+   Create a `.env` file in the `backend` folder with the following keys:
+   ```env
+   # Server
+   PORT=4000
+   JWT_SECRET=your_super_secret_key_here
+
+   # Database
+   MONGODB_URI=mongodb://localhost:27017/llm_quiz_platform
+   # Or for MongoDB Atlas:
+   # MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/llm_quiz_platform
+
+   # AI Integration (Groq)
+   GROQ_API_KEY=gsk_...
+   GROQ_MODEL=llama-3.1-8b-instant
+
+   # Email Service (SMTP) - For notifications
+   SMTP_HOST=smtp.gmail.com
+   SMTP_PORT=587
+   SMTP_USER=your_email@gmail.com
+   SMTP_PASS=your_app_specific_password
+   MAIL_FROM="LLM Quiz Platform <no-reply@example.com>"
+   ```
+
+   **Frontend (`frontend/.env`)**
+   Create a `.env` file in the `frontend` folder:
+   ```env
+   VITE_API_URL=http://localhost:4000/api
+   ```
 
 4. **Install Frontend Dependencies**
    ```bash
